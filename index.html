@@ -2,16 +2,18 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="color-scheme" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eliwell Advisor Pro — מ.כ אור שי</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
+    color-scheme: light;
     --bg: #f5f7fa;
     --white: #ffffff;
-    --primary: #1a4fa0;
-    --primary-dark: #133a7a;
-    --primary-light: #e8eef8;
+    --primary: #2b9ed4;
+    --primary-dark: #1a7aaa;
+    --primary-light: #e6f4fb;
     --accent: #e8323c;
     --text: #1a202c;
     --text-muted: #6b7280;
@@ -339,10 +341,11 @@
     border-color: var(--card-border);
   }
 
-  .card-id  { --card-color: linear-gradient(90deg,#1a4fa0,#2563eb); --card-border: rgba(26,79,160,0.3); }
+  .card-id  { --card-color: linear-gradient(90deg,#2b9ed4,#4db8e8); --card-border: rgba(43,158,212,0.3); }
   .card-ew  { --card-color: linear-gradient(90deg,#059669,#10b981); --card-border: rgba(5,150,105,0.3); }
   .card-ic  { --card-color: linear-gradient(90deg,#d97706,#f59e0b); --card-border: rgba(217,119,6,0.3); }
   .card-rtx { --card-color: linear-gradient(90deg,#7c3aed,#a78bfa); --card-border: rgba(124,58,237,0.3); }
+  .card-rex { --card-color: linear-gradient(90deg,#0891b2,#22d3ee); --card-border: rgba(8,145,178,0.3); }
 
   .card-top {
     display: flex;
@@ -361,10 +364,11 @@
     flex-shrink: 0;
   }
 
-  .card-id  .card-icon { background: #e8eef8; }
+  .card-id  .card-icon { background: #e6f4fb; }
   .card-ew  .card-icon { background: #d1fae5; }
   .card-ic  .card-icon { background: #fef3c7; }
   .card-rtx .card-icon { background: #ede9fe; }
+  .card-rex  .card-icon { background: #cffafe; }
 
   .card-meta { flex: 1; }
 
@@ -382,10 +386,11 @@
     letter-spacing: 0.3px;
   }
 
-  .card-id  .card-subtitle { color: #1a4fa0; }
+  .card-id  .card-subtitle { color: #2b9ed4; }
   .card-ew  .card-subtitle { color: #059669; }
   .card-ic  .card-subtitle { color: #d97706; }
   .card-rtx .card-subtitle { color: #7c3aed; }
+  .card-rex  .card-subtitle { color: #0891b2; }
 
   .card-arrow {
     font-size: 18px;
@@ -442,10 +447,11 @@
     transition: opacity 0.2s, transform 0.15s;
   }
 
-  .card-id  .cta-btn { background: linear-gradient(135deg,#1a4fa0,#2563eb); }
+  .card-id  .cta-btn { background: linear-gradient(135deg,#2b9ed4,#4db8e8); }
   .card-ew  .cta-btn { background: linear-gradient(135deg,#059669,#10b981); }
   .card-ic  .cta-btn { background: linear-gradient(135deg,#d97706,#f59e0b); }
   .card-rtx .cta-btn { background: linear-gradient(135deg,#7c3aed,#a78bfa); }
+  .card-rex  .cta-btn { background: linear-gradient(135deg,#0891b2,#22d3ee); }
 
   .agent-card:hover .cta-btn { opacity: 0.92; transform: scale(0.99); }
 
@@ -707,6 +713,29 @@
           <span class="cap">אבחון תקלות</span>
           <span class="cap">פרמטרים</span>
           <span class="cap">חיווט EEV</span>
+        </div>
+        <div class="cta-btn">פתח סוכן ←</div>
+      </a>
+
+      <a href="https://chatgpt.com/g/g-69e51822689c81919b3a279b84f34723-svkn-m-rkvt-shlyth-eliwell" target="_blank" class="agent-card card-rex fade-in d6">
+        <div class="card-top">
+          <div class="card-icon">🖥️</div>
+          <div class="card-meta">
+            <div class="card-title">מערכות פיקוח וניטור</div>
+            <div class="card-subtitle">Refrigeration Expert XP · TelevisGo TGO</div>
+          </div>
+          <div class="card-arrow">←</div>
+        </div>
+        <p class="card-desc">
+          מומחה למערכות פיקוח וניטור מרכזיות — REX לעסקים קטנים (עד 10 מכשירים)
+          ו-TGO למערכות תעשייתיות גדולות (עד 224 מכשירים).
+        </p>
+        <div class="capabilities">
+          <span class="cap">התקנה והגדרה</span>
+          <span class="cap">תקשורת Modbus</span>
+          <span class="cap">אזעקות HACCP</span>
+          <span class="cap">Web UI</span>
+          <span class="cap">אבחון תקלות</span>
         </div>
         <div class="cta-btn">פתח סוכן ←</div>
       </a>
