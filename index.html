@@ -484,6 +484,48 @@
 
   .info-text strong { font-weight: 700; }
 
+  /* ── INFO BANNER ── */
+  .warning-banner {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-right: 4px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .warning-icon {
+    font-size: 28px;
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  .warning-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .warning-text strong {
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .warning-text a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .warning-text a:hover {
+    opacity: 0.75;
+  }
+
   /* ── FOOTER ── */
   footer {
     background: var(--white);
@@ -625,6 +667,15 @@
 
   <!-- MAIN -->
   <main class="main">
+
+    <div class="warning-banner fade-in d3">
+      <div class="warning-icon">💡</div>
+      <div class="warning-text">
+        <strong>שים לב — שימוש ללא חשבון ChatGPT עלול לגרום לתשובות חלקיות ופחות מדויקות.</strong>
+        הרשמה לחשבון חינם לוקחת פחות מדקה. &nbsp;→&nbsp;
+        <a href="https://chatgpt.com/auth/login?next=%2F%23signup" target="_blank">הירשם עכשיו: chatgpt.com »&nbsp;Sign&nbsp;up</a>
+      </div>
+    </div>
 
     <div class="agents-grid">
 
