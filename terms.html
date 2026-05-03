@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תנאי שימוש — Eliwell Advisor Pro | מ.כ אור שי</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f5f7fa;
+    --white: #ffffff;
+    --primary: #2b9ed4;
+    --primary-dark: #1a7aaa;
+    --primary-light: #e6f4fb;
+    --text: #1a202c;
+    --text-muted: #374151;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Heebo', sans-serif; min-height: 100vh; direction: rtl; }
+
+  .topbar { background: var(--primary-dark); padding: 11px 0; font-size: 15px; color: rgba(255,255,255,0.85); }
+  .topbar-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  .topbar a:hover { color: #fff; }
+  .topbar-links { display: flex; gap: 20px; align-items: center; }
+
+  header { background: var(--white); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1140px; margin: 0 auto; padding: 0 32px; height: 110px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .logo-wrap { display: flex; align-items: center; gap: 18px; text-decoration: none; color: inherit; }
+  .logo-wrap img { height: 80px; width: auto; object-fit: contain; }
+  .logo-divider { width: 1px; height: 48px; background: var(--border); }
+  .header-label { display: flex; flex-direction: column; gap: 4px; }
+  .header-label-main { font-size: 22px; font-weight: 800; color: var(--primary); line-height: 1.2; }
+  .header-label-sub { font-size: 15px; color: var(--text-muted); font-weight: 500; }
+  .header-nav { display: flex; align-items: center; gap: 8px; }
+  .nav-link { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 6px 12px; border-radius: 8px; transition: all 0.2s; font-weight: 500; }
+  .nav-link:hover { color: var(--primary); background: var(--primary-light); }
+  .nav-back { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: var(--primary); text-decoration: none; padding: 8px 16px; background: var(--primary-light); border-radius: 8px; border: 1px solid rgba(43,158,212,0.2); transition: all 0.2s; }
+  .nav-back:hover { background: var(--primary); color: white; }
+
+  .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #2563eb 100%); padding: 48px 24px 40px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -40px; left: 0; right: 0; height: 80px; background: var(--bg); clip-path: ellipse(60% 100% at 50% 100%); }
+  .hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .hero h1 { font-size: clamp(24px, 4vw, 40px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+  .hero p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+
+  .main { max-width: 860px; margin: 0 auto; padding: 48px 24px 64px; }
+
+  .doc-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-md); overflow: hidden; }
+  .doc-header { background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); padding: 28px 36px; display: flex; align-items: center; gap: 16px; }
+  .doc-header-icon { font-size: 32px; }
+  .doc-header-text h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .doc-header-text p { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+  .doc-body { padding: 36px; }
+
+  .preamble { background: #fff8e7; border: 1px solid #f59e0b; border-right: 4px solid #f59e0b; border-radius: 8px; padding: 24px 28px; margin-bottom: 36px; }
+  .preamble h2 { font-size: 16px; font-weight: 800; color: #92400e; margin-bottom: 14px; }
+  .preamble p { font-size: 14.5px; line-height: 1.9; color: #78350f; margin-bottom: 12px; }
+  .preamble p:last-child { margin-bottom: 0; }
+
+  .section-divider { border: none; border-top: 2px solid var(--border); margin: 32px 0; }
+  .doc-title { font-size: 20px; font-weight: 800; color: var(--text); text-align: center; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid var(--primary); }
+
+  .section { margin-bottom: 28px; }
+  .section-heading { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .section-num { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .section-title { font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.4; }
+  .section-body { font-size: 14.5px; line-height: 1.9; color: var(--text-muted); padding-right: 42px; }
+  .section-body p { margin-bottom: 10px; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .alpha-list { list-style: none; padding: 0; margin: 8px 0; }
+  .alpha-list li { padding: 4px 0; display: flex; gap: 8px; font-size: 14.5px; line-height: 1.9; color: var(--text-muted); }
+  .alpha-marker { font-weight: 700; color: var(--primary); flex-shrink: 0; min-width: 24px; }
+
+  .bullet-list { list-style: none; padding: 0; margin: 8px 0; }
+  .bullet-list li { padding: 4px 0 4px 0; padding-right: 18px; position: relative; font-size: 14.5px; line-height: 1.9; color: var(--text-muted); }
+  .bullet-list li::before { content: '•'; position: absolute; right: 0; color: var(--primary); font-weight: 700; }
+
+  .confirmation { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #86efac; border-right: 4px solid #22c55e; border-radius: 8px; padding: 24px 28px; margin-top: 4px; }
+  .confirmation p { font-size: 14.5px; line-height: 1.9; color: #15803d; padding: 3px 0; display: flex; gap: 8px; }
+  .confirmation p::before { content: '✓'; font-weight: 700; color: #22c55e; flex-shrink: 0; }
+
+  footer { background: var(--white); border-top: 1px solid var(--border); padding: 28px 24px; }
+  .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-left { display: flex; align-items: center; gap: 12px; }
+  .footer-logo { height: 42px; width: auto; opacity: 0.8; }
+  .footer-text { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  .footer-right { display: flex; gap: 16px; align-items: center; }
+  .footer-link { font-size: 12.5px; color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; display: flex; align-items: center; gap: 5px; }
+  .footer-link:hover { color: var(--primary); }
+
+  @media (max-width: 640px) {
+    .header-nav { display: none; }
+    .doc-body { padding: 24px 16px; }
+    .doc-header { padding: 20px; }
+    .section-body { padding-right: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>מחלקת הבקרה — תמיכה טכנית מקצועית</span>
+    <div class="topbar-links">
+      <span>חולון – הפלד 16</span><span style="opacity:.4">|</span>
+      <span>חיפה – מרדכי מקלף 33</span><span style="opacity:.4">|</span>
+      <a href="https://www.orshy.co.il" target="_blank">orshy.co.il ↗</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="https://www.orshy.co.il" class="logo-wrap" target="_blank">
+      <img src="logo.jpeg" alt="אור שי" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div style="display:none;width:44px;height:44px;background:#1a4fa0;border-radius:10px;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:14px;">מ.כ</div>
+      <div class="logo-divider"></div>
+      <div class="header-label">
+        <span class="header-label-main">מחלקת הבקרה</span>
+        <span class="header-label-sub">Eliwell Advisor Pro</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">סוכנים</a>
+      <a href="https://www.orshy.co.il" target="_blank" class="nav-link">אתר החברה</a>
+      <a href="index.html" class="nav-back">→ חזרה לסוכנים</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>⚖️ תנאי שימוש, כתב ויתור והגבלת אחריות</h1>
+    <p>מסמך משפטי מלא — סוכן Eliwell Advisor Pro | מ.כ אור שי בע"מ</p>
+  </div>
+</div>
+
+<main class="main">
+  <div class="doc-card">
+
+    <div class="doc-header">
+      <div class="doc-header-icon">📋</div>
+      <div class="doc-header-text">
+        <h2>מסמך משפטי סוכן בקרה — תנאי שימוש, כתב ויתור, והגבלת אחריות</h2>
+        <p>יש לקרוא את המסמך במלואו לפני השימוש בסוכן</p>
+      </div>
+    </div>
+
+    <div class="doc-body">
+
+      <div class="preamble">
+        <h2>פתיח קצר</h2>
+        <p>המידע המוצג באמצעות סוכן Eliwell נועד לסיוע כללי בלבד. המידע אינו מהווה הוראת ביצוע, אישור עבודה, ייעוץ מקצועי, ייעוץ הנדסי, ייעוץ חשמלי, ייעוץ בטיחותי, חוות דעת מומחה, או תחליף לבדיקה בשטח, למסמכי יצרן, או לשיקול דעת עצמאי של בעל מקצוע מורשה ומוסמך כדין. כל פעולה בחשמל, קירור, מיזוג אוויר, בקרה, פיקוד, גזי קירור, או גזים דליקים, מחייבת רישוי מתאים, הסמכה מתאימה, בדיקה בפועל, ועיון מלא במסמכי היצרן ובהוראות הדין. האחריות הבלעדית לכל שימוש, בדיקה, החלטה, הסתמכות, או ביצוע בפועל חלה על המשתמש בלבד. למען הסר ספק, מ.כ אור שי בע"מ ו-ChatGPT אינם נושאים בכל אחריות משפטית, מקצועית, תפעולית, בטיחותית, עסקית, או מוסרית, בקשר לשימוש בסוכן או בקשר לכל פעולה, מחדל, נזק, הפסד, או תוצאה הנובעים מן המידע המוצג בו או מן ההסתמכות עליו.</p>
+        <p>בישראל יש כיום מסגרת רישוי מפורשת לעבודות חשמל, ומסגרת רישוי ייעודית לעבודה במערכות קירור ומיזוג אוויר, לרבות כניסת החוק הייעודי לתוקף ביום 15.7.2025. בנוסף, תנאי השימוש של OpenAI קובעים כי הפלט עלול שלא להיות מדויק, שאין להסתמך עליו כמקור אמת יחיד, ושאין לראות בו תחליף לייעוץ מקצועי.</p>
+      </div>
+
+      <hr class="section-divider">
+      <div class="doc-title">תנאי שימוש, כתב ויתור, והגבלת אחריות</div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">1</span><span class="section-title">כללי</span></div>
+        <div class="section-body">
+          <p>השימוש בסוכן Eliwell, לרבות כל מידע, תוכן, תשובה, הסבר, תיאור, המלצה, הפניה, או פלט אחר המופק באמצעותו, כפוף לתנאים המפורטים במסמך זה בלבד. עצם השימוש בסוכן מהווה אישור מצד המשתמש כי קרא את התנאים, הבין אותם, והסכים להם באופן מלא, מפורש, סופי ומחייב.</p>
+          <p>ככל שהמשתמש אינו מסכים לאיזה מן התנאים, עליו להימנע מכל שימוש בסוכן.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">2</span><span class="section-title">מהות השירות</span></div>
+        <div class="section-body">
+          <p>סוכן Eliwell הוא כלי דיגיטלי תומך מידע בלבד. מטרתו לספק סיוע כללי והכוונה ראשונית בתחומי בקרה, קירור, מיזוג אוויר, פיקוד, חשמל, אלקטרוניקה, תפעול מערכות, ואינטגרציה בין רכיבים ומערכות.</p>
+          <ul class="bullet-list">
+            <li>הסוכן אינו מחליף בעל מקצוע מורשה ומוסמך כדין.</li>
+            <li>הסוכן אינו מחליף בדיקת שטח.</li>
+            <li>הסוכן אינו מחליף הוראות יצרן.</li>
+            <li>הסוכן אינו מחליף מסמכי שירות, שרטוטים, מפרטים, נהלים, תקנים, הוראות בטיחות, או דרישות דין.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">3</span><span class="section-title">היעדר ייעוץ מקצועי והיעדר אישור לביצוע פעולה</span></div>
+        <div class="section-body">
+          <p>המידע המופק באמצעות הסוכן אינו מהווה:</p>
+          <ul class="alpha-list">
+            <li><span class="alpha-marker">א.</span> הוראת ביצוע.</li>
+            <li><span class="alpha-marker">ב.</span> אישור עבודה.</li>
+            <li><span class="alpha-marker">ג.</span> אישור לחבר ציוד, לנתק ציוד, לפתוח לוח, לשנות חיווט, לשנות פרמטרים, לעקוף הגנות, לנטרל מנגנוני בטיחות, או להפעיל מערכת.</li>
+            <li><span class="alpha-marker">ד.</span> ייעוץ חשמלי.</li>
+            <li><span class="alpha-marker">ה.</span> ייעוץ הנדסי.</li>
+            <li><span class="alpha-marker">ו.</span> ייעוץ בטיחותי.</li>
+            <li><span class="alpha-marker">ז.</span> ייעוץ בתחום קירור או מיזוג אוויר.</li>
+            <li><span class="alpha-marker">ח.</span> חוות דעת מומחה.</li>
+            <li><span class="alpha-marker">ט.</span> חוות דעת מקצועית מחייבת.</li>
+            <li><span class="alpha-marker">י.</span> אישור רגולטורי.</li>
+            <li><span class="alpha-marker">יא.</span> תחליף לאבחון מקצועי במקום.</li>
+            <li><span class="alpha-marker">יב.</span> תחליף לשיקול דעת עצמאי של בעל מקצוע מורשה ומוסמך כדין.</li>
+          </ul>
+          <p>למען הסר ספק, כל מידע המתקבל באמצעות הסוכן הוא מידע כללי בלבד, ואין לראות בו הנחיה מחייבת לביצוע פעולה כלשהי בפועל.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">4</span><span class="section-title">איסור הסתמכות בלעדית</span></div>
+        <div class="section-body">
+          <p>אין להסתמך על המידע המוצג באמצעות הסוכן כמקור יחיד, מלא, סופי, או בלעדי לצורך קבלת החלטה מקצועית, בטיחותית, תפעולית, הנדסית, או מעשית.</p>
+          <ul class="bullet-list">
+            <li>לפני כל פעולה בפועל, חובה לבצע בדיקה עצמאית ומלאה של המערכת, הציוד, האתר, ותנאי העבודה.</li>
+            <li>חובה לעיין במסמכי היצרן הרלוונטיים.</li>
+            <li>חובה לאמת את כל הנתונים בפועל.</li>
+            <li>חובה להפעיל שיקול דעת מקצועי עצמאי בהתאם לנסיבות המקרה.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">5</span><span class="section-title">אחריות המשתמש לאימות נתונים</span></div>
+        <div class="section-body">
+          <p>המשתמש אחראי באופן בלעדי ומלא לוודא, לפני כל פעולה, את כל הנתונים והנסיבות הרלוונטיים, ובכלל זה:</p>
+          <ul class="bullet-list">
+            <li>זהות הציוד ודגם הציוד.</li>
+            <li>גרסת הבקר או התוכנה.</li>
+            <li>תצורת החיווט והפיקוד.</li>
+            <li>סוג המתח ומצב ההזנה.</li>
+            <li>תקינות הארקה, הגנות, ממסרים, וחיישנים.</li>
+            <li>סוג חומר הקירור.</li>
+            <li>מצב הלחצים, הטמפרטורות, והאטימות.</li>
+            <li>התאמת הרכיבים למערכת בפועל.</li>
+            <li>תנאי האתר והסיכונים הייחודיים למקום העבודה.</li>
+          </ul>
+          <p>המשתמש אחראי לבדו לוודא כי כל פעולה מבוצעת רק לאחר בדיקה עצמאית מלאה, ולאחר עיון בהוראות היצרן ובהוראות הדין.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">6</span><span class="section-title">חובת רישוי, הסמכה, הכשרה וניסיון</span></div>
+        <div class="section-body">
+          <p>כל פעולה בחשמל תבוצע אך ורק על ידי מי שמחזיק ברישיון מתאים כדין, בהיקף סמכות מתאים, ובהתאם לסוג העבודה, רמת המתח, אופי המתקן, ותנאי הבטיחות הרלוונטיים.</p>
+          <p>כל פעולה במערכת קירור או מיזוג אוויר תבוצע אך ורק על ידי מי שמחזיק בכל רישוי, הסמכה, הכשרה, ידע, וניסיון הנדרשים לפי הדין, לפי דרישות היצרן, ולפי מאפייני המערכת והסיכון הכרוך בה.</p>
+          <p>כל פעולה הכרוכה בגזי קירור, גזים דליקים, פתיחת מערכת, טעינה, ריקון, שאיבה, הלחמה, חיבור, ניתוק, פירוק, התקנה, תחזוקה, איתור תקלה, בדיקה, כיוון, תכנות, או הפעלה, תבוצע אך ורק על ידי בעל מקצוע מוסמך ומתאים לכך.</p>
+          <p>אם למשתמש אין את כלל ההסמכות, הרישיונות, הידע, הניסיון, והציוד הנדרשים, חל עליו איסור מוחלט לבצע את הפעולה.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">7</span><span class="section-title">איסורים מפורשים</span></div>
+        <div class="section-body">
+          <p>מבלי לגרוע מכלליות האמור, אין לראות במידע המוצג באמצעות הסוכן הרשאה לבצע פעולה כלשהי באחד מן המקרים הבאים:</p>
+          <ul class="alpha-list">
+            <li><span class="alpha-marker">א.</span> פתיחת לוח חשמל.</li>
+            <li><span class="alpha-marker">ב.</span> עבודה על רכיב חי או בסביבת מתח.</li>
+            <li><span class="alpha-marker">ג.</span> ביצוע מדידה חשמלית ללא הכשרה וציוד מתאימים.</li>
+            <li><span class="alpha-marker">ד.</span> שינוי חיווט, גישור, עקיפה, או נטרול של מנגנוני הגנה.</li>
+            <li><span class="alpha-marker">ה.</span> שינוי פרמטרים מהותיים במערכת, בבקר, או בהגנות.</li>
+            <li><span class="alpha-marker">ו.</span> פתיחת מערכת קירור.</li>
+            <li><span class="alpha-marker">ז.</span> טיפול בחומרי קירור.</li>
+            <li><span class="alpha-marker">ח.</span> טיפול בגזים דליקים.</li>
+            <li><span class="alpha-marker">ט.</span> ביצוע פעולה ניסיונית במערכת פעילה של לקוח.</li>
+            <li><span class="alpha-marker">י.</span> ביצוע פעולה העלולה לגרום סיכון לאדם, לרכוש, למלאי, למזון, לתרופות, או לסביבה.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">8</span><span class="section-title">מסמכי יצרן, הוראות בטיחות, ודין מחייב גוברים</span></div>
+        <div class="section-body">
+          <p>בכל מקרה של ספק, סתירה, חוסר התאמה, או אי בהירות, יגברו תמיד הוראות היצרן, ספרות היצרן, דפי הנתונים, שרטוטי החיווט, תוויות הציוד, מסמכי השירות, אזהרות הבטיחות, דרישות האתר, הוראות הרשויות המוסמכות, וכל דין או תקן מחייב.</p>
+          <p>המשתמש מתחייב לעיין בכל מסמך רלוונטי של Eliwell ושל יתר יצרני המערכת לפני כל פעולה, ולהסתמך בראש ובראשונה על מסמכים אלה, ולא על הסוכן בלבד.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">9</span><span class="section-title">סיכון מובנה ואחריות המשתמש לביצוע בפועל</span></div>
+        <div class="section-body">
+          <p>המשתמש מאשר כי עבודה במערכות חשמל, קירור, מיזוג, בקרה, ופיקוד כרוכה בסיכון ממשי, אשר עשוי לכלול התחשמלות, קשת חשמלית, כוויה, שריפה, פיצוץ, התלקחות, חנק, הרעלה, פגיעה מכנית, פגיעה סביבתית, נזק לציוד, נזק למלאי, פגיעה בשרשרת קירור, קלקול מזון, נזק לתרופות, השבתת מערכות, פגיעה עסקית, ופגיעה גופנית חמורה עד כדי מוות.</p>
+          <p>המשתמש מקבל על עצמו אחריות מלאה, בלעדית, וישירה לכל החלטה, פעולה, מחדל, בדיקה, יישום, פרשנות, הסתמכות, או ביצוע בפועל הנעשים על בסיס המידע שהתקבל באמצעות הסוכן.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">10</span><span class="section-title">היעדר מצג והיעדר התחייבות</span></div>
+        <div class="section-body">
+          <p>המידע המופק באמצעות הסוכן ניתן כפי שהוא.</p>
+          <p>מ.כ אור שי בע"מ אינה מציגה ואינה מתחייבת כי המידע מדויק, מלא, עדכני, נקי משגיאות, מתאים לכל דגם, מתאים לכל מערכת, מתאים לכל אתר, מתאים לכל תקלה, או מתאים לכל שימוש מסוים.</p>
+          <ul class="bullet-list">
+            <li>מ.כ אור שי בע"מ אינה מתחייבת לתוצאה כלשהי.</li>
+            <li>מ.כ אור שי בע"מ אינה מתחייבת לפתרון תקלה.</li>
+            <li>מ.כ אור שי בע"מ אינה מתחייבת להתאמה מלאה של המידע לנסיבות המקרה.</li>
+            <li>מ.כ אור שי בע"מ אינה מתחייבת כי השימוש במידע ימנע נזק, תקלה, הפסד, או סיכון.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">11</span><span class="section-title">הגבלת אחריות של מ.כ אור שי בע"מ</span></div>
+        <div class="section-body">
+          <p>בכפוף לכל דין קוגנטי שאין להתנות עליו, מ.כ אור שי בע"מ, מנהליה, בעלי מניותיה, עובדיה, נציגיה, ספקיה, יועציה, מפתחיה, שותפיה, וכל מי מטעמה, לא יישאו באחריות מכל סוג שהוא, בין חוזית, נזיקית, סטטוטורית, מקצועית, ישירה, עקיפה, מיוחדת, תוצאתית, או אחרת, בקשר עם השימוש בסוכן או עם כל הסתמכות על המידע המופק באמצעותו.</p>
+          <p>הגבלה זו תחול על כל נזק, הפסד, הוצאה, חיוב, תביעה, דרישה, קנס, עיצום, עיכוב, השבתה, אובדן נתונים, אובדן מלאי, אובדן תוצרת, קלקול מזון, פגיעה בשרשרת קירור, נזק לתרופות, נזק לציוד, נזק למערכת, נזק לרכוש, אובדן רווח, אובדן לקוחות, אובדן שימוש, פגיעה במוניטין, נזק סביבתי, או כל נזק אחר, ישיר או עקיף, שנגרם או עלול להיגרם עקב השימוש בסוכן, עקב הסתמכות על המידע, או עקב יישומו בפועל.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">12</span><span class="section-title">היעדר אחריות של ChatGPT ושל הפלטפורמה</span></div>
+        <div class="section-body">
+          <p>המשתמש מאשר כי גם OpenAI, ChatGPT וכל פלטפורמה, מערכת, או תשתית טכנולוגית שבאמצעותן מופעל הסוכן, אינם אחראים לכל החלטה, פעולה, הסתמכות, מחדל, תוצאה, נזק, או הפסד, הנובעים מן השימוש במידע.</p>
+          <p>המשתמש מצהיר ומאשר כי השימוש בסוכן אינו יוצר כל אחריות משפטית, מקצועית, תפעולית, בטיחותית, עסקית, או מוסרית מצד ChatGPT, מצד OpenAI, או מצד מי מטעמם.</p>
+          <p>ככל שהדין מאפשר זאת, המשתמש מוותר על כל טענה, דרישה, או תביעה כלפי ChatGPT, כלפי OpenAI, וכלפי כל גורם טכנולוגי הקשור להפעלת הסוכן, בקשר עם השימוש בסוכן, במידע שהופק באמצעותו, או בכל תוצאה של יישום המידע בפועל.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">13</span><span class="section-title">היעדר אחריות של מ.כ אור שי בע"מ, לרבות אחריות מוסרית</span></div>
+        <div class="section-body">
+          <p>המשתמש מצהיר ומאשר כי מ.כ אור שי בע"מ אינה אחראית, ולא תישא בכל אחריות, חובה, או חבות, משפטית, מקצועית, תפעולית, בטיחותית, מסחרית, נזיקית, חוזית, או מוסרית, בקשר לכל שימוש שיעשה בסוכן, בקשר לכל הסתמכות על המידע, או בקשר לכל פעולה, החלטה, בדיקה, ביצוע, מחדל, נזק, הפסד, או תוצאה הנובעים, במישרין או בעקיפין, מן השימוש בסוכן.</p>
+          <p>מובהר במפורש כי עצם הפעלת הסוכן, עצם מתן הגישה אליו, עצם הופעת שמה של מ.כ אור שי בע"מ, או עצם העובדה שהסוכן עוסק בתחומים מקצועיים הרלוונטיים לפעילות החברה, אינם יוצרים, ואינם ייחשבו כיוצרים, אחריות מכל סוג שהוא מצד מ.כ אור שי בע"מ.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">14</span><span class="section-title">אחריות המשתמש לתוכן שהוא מוסר</span></div>
+        <div class="section-body">
+          <p>המשתמש אחראי באופן מלא ובלעדי לכל מידע שהוא מוסר לסוכן, לרבות תיאור התקלה, נתוני המערכת, מסמכים, צילומים, שרטוטים, מדידות, והנחות מקצועיות שעל בסיסם הופק המידע.</p>
+          <p>מ.כ אור שי בע"מ ו-ChatGPT אינם אחראים לכל פלט שניתן על בסיס מידע שגוי, חלקי, מטעה, לא מדויק, לא מעודכן, או חסר.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">15</span><span class="section-title">היעדר יחסי ייעוץ או שירות</span></div>
+        <div class="section-body">
+          <p>השימוש בסוכן אינו יוצר יחסי ייעוץ, שירות, פיקוח, תכנון, הנדסה, בדיקה, קבלנות, נאמנות, שליחות, או כל מערכת יחסים מקצועית מחייבת אחרת בין המשתמש לבין מ.כ אור שי בע"מ.</p>
+          <p>השימוש בסוכן אינו יוצר יחסי ייעוץ, שירות, פיקוח, תכנון, הנדסה, בדיקה, קבלנות, נאמנות, שליחות, או כל מערכת יחסים מקצועית מחייבת אחרת בין המשתמש לבין OpenAI, ChatGPT, או מי מטעמם.</p>
+          <p>הסוכן הוא כלי מידע בלבד.</p>
+          <p>המשתמש נותר הגורם האחראי הבלעדי להחלטותיו ולמעשיו.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">16</span><span class="section-title">שיפוי</span></div>
+        <div class="section-body">
+          <p>המשתמש מתחייב לשפות ולפצות את מ.כ אור שי בע"מ, מנהליה, עובדיה, בעלי מניותיה, נציגיה, יועציה, ספקיה, מפתחיה, וכל מי מטעמה, וכן את OpenAI, ChatGPT וכל מי מטעמם, ככל שהדין מאפשר זאת, בגין כל נזק, הפסד, הוצאה, תשלום, קנס, עיצום, דרישה, תביעה, הליך, או שכר טרחת עורך דין, הנובעים, במישרין או בעקיפין, מן השימוש שלו בסוכן, מן ההסתמכות שלו על המידע, מהפרת תנאי מסמך זה, מהפרת דין, מהפרת הוראות יצרן, או מכל פעולה שביצע ללא רישוי, הסמכה, בדיקה, או זהירות כנדרש.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">17</span><span class="section-title">שימוש בהתאם לדין</span></div>
+        <div class="section-body">
+          <p>המשתמש מתחייב לעשות שימוש בסוכן ובהמלצות הכלליות המופקות באמצעותו רק בהתאם לכל דין חל, לכל דרישת רישוי, לכל הוראת בטיחות, ולכל הוראת יצרן רלוונטית. חובה זו מתיישבת הן עם מסגרת הרישוי הישראלית בתחומי החשמל והקירור, והן עם תנאי השימוש של OpenAI המחייבים שימוש בהתאם לדין והפעלת שיקול דעת אנושי לפני שימוש בפלט.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">18</span><span class="section-title">דין חל וסמכות שיפוט</span></div>
+        <div class="section-body">
+          <p>על מסמך זה יחולו דיני מדינת ישראל בלבד.</p>
+          <p>הסמכות הבלעדית לדון בכל מחלוקת, טענה, או הליך הנובעים מן השימוש בסוכן או הקשורים אליו, תהיה נתונה לבתי המשפט המוסמכים במחוז תל אביב, אלא אם דין מחייב קובע אחרת.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading"><span class="section-num">19</span><span class="section-title">אישור המשתמש</span></div>
+        <div class="confirmation">
+          <p>המשתמש מאשר כי קרא את תנאי המסמך.</p>
+          <p>המשתמש מאשר כי הבין את תנאי המסמך.</p>
+          <p>המשתמש מאשר כי ידוע לו שהסוכן אינו תחליף לבעל מקצוע מורשה.</p>
+          <p>המשתמש מאשר כי ידוע לו שהסוכן אינו תחליף למסמכי יצרן.</p>
+          <p>המשתמש מאשר כי ידוע לו שהסוכן אינו תחליף לבדיקה בשטח.</p>
+          <p>המשתמש מאשר כי האחריות המלאה והבלעדית לכל שימוש, הסתמכות, בדיקה, החלטה, ופעולה בפועל, חלה עליו בלבד.</p>
+          <p>המשתמש מאשר ומקבל כי מ.כ אור שי בע"מ ו-ChatGPT אינם נושאים בכל אחריות משפטית, מקצועית, תפעולית, בטיחותית, עסקית, או מוסרית, בקשר לשימוש בסוכן או בקשר לכל פעולה שתבוצע על בסיס המידע שנמסר באמצעותו.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="logo.jpeg" alt="אור שי" class="footer-logo" onerror="this.style.display='none'">
+      <div class="footer-text">© מ.כ אור שי בע"מ<br>חולון – הפלד 16 &nbsp;|&nbsp; חיפה – מרדכי מקלף 33</div>
+    </div>
+    <div class="footer-right">
+      <a href="index.html" class="footer-link">→ חזרה לסוכנים</a>
+      <a href="tel:035583303" class="footer-link">📞 03-5583303</a>
+      <a href="https://www.orshy.co.il" target="_blank" class="footer-link">🌐 orshy.co.il</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
